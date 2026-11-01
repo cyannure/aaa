@@ -1,0 +1,14 @@
+pandas>=2.0
+numpy>=1.24
+scipy
+scikit-learn>=1.4
+matplotlib
+seaborn
+plotly
+xgboost
+lightgbm
+imbalanced-learn
+jupyterlab
+ipykernel
+requests
+pyarrow
