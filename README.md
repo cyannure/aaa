@@ -7,6 +7,7 @@ Données : [Bases de données annuelles des accidents corporels de la circulatio
 ```bash
 make setup      # crée .venv et installe requirements.txt
 make data       # télécharge l'année 2023 dans data/raw/2023/
+make dataset    # construit data/processed/accidents_2023.csv (1 ligne = 1 accident)
 make lab        # lance JupyterLab
 ```
 ## Structure
