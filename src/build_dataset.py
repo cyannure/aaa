@@ -62,7 +62,8 @@ def build(year):
     lieu = lieux.drop_duplicates("Num_Acc").set_index("Num_Acc")
     X = X.join(lieu[["catr", "surf", "situ"]])
     X["vma"] = pd.to_numeric(lieu["vma"])
-    X["nbv"] = pd.to_numeric(lieu["nbv"], errors="coerce")  # « #VALEURMULTI » -> NaN
+    # « #VALEURMULTI » -> NaN ; 0 voie = non renseigné selon la documentation BAAC
+    X["nbv"] = pd.to_numeric(lieu["nbv"], errors="coerce").replace(0, np.nan)
 
     # Conducteurs (catu = 1)
     cond = usa[usa["catu"] == "1"].copy()
